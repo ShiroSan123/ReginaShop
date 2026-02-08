@@ -76,7 +76,7 @@ export default function OrderManager({ orders }) {
             />
           </div>
           <Select value={statusFilter} onValueChange={setStatusFilter}>
-            <SelectTrigger className="w-48">
+            <SelectTrigger className="w-full sm:w-48">
               <SelectValue placeholder="Все статусы" />
             </SelectTrigger>
             <SelectContent>
@@ -88,8 +88,8 @@ export default function OrderManager({ orders }) {
           </Select>
         </div>
 
-        <div className="rounded-lg border overflow-hidden">
-          <Table>
+        <div className="rounded-lg border overflow-x-auto">
+          <Table className="min-w-[720px]">
             <TableHeader>
               <TableRow className="bg-slate-50">
                 <TableHead>Дата</TableHead>

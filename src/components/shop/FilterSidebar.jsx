@@ -167,52 +167,56 @@ function FilterContent({ filters, setFilters, maxPrice, onReset }) {
   );
 }
 
-export default function FilterSidebar({ filters, setFilters, maxPrice, onReset }) {
+export default function FilterSidebar({ filters, setFilters, maxPrice, onReset, showDesktop = true, showMobile = true }) {
   return (
     <>
       {/* Desktop */}
-      <div className="hidden lg:block w-72 flex-shrink-0">
-        <div className="sticky top-24 bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-          <h2 className="text-lg font-bold text-slate-800 mb-6 flex items-center gap-2">
-            <SlidersHorizontal className="w-5 h-5" />
-            Фильтры
-          </h2>
-          <FilterContent 
-            filters={filters} 
-            setFilters={setFilters} 
-            maxPrice={maxPrice} 
-            onReset={onReset} 
-          />
+      {showDesktop && (
+        <div className="hidden lg:block w-72 flex-shrink-0">
+          <div className="sticky top-24 bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <h2 className="text-lg font-bold text-slate-800 mb-6 flex items-center gap-2">
+              <SlidersHorizontal className="w-5 h-5" />
+              Фильтры
+            </h2>
+            <FilterContent 
+              filters={filters} 
+              setFilters={setFilters} 
+              maxPrice={maxPrice} 
+              onReset={onReset} 
+            />
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Mobile */}
-      <div className="lg:hidden">
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="outline" className="gap-2">
-              <SlidersHorizontal className="w-4 h-4" />
-              Фильтры
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left" className="w-80 overflow-y-auto">
-            <SheetHeader className={undefined}>
-              <SheetTitle className="flex items-center gap-2">
-                <SlidersHorizontal className="w-5 h-5" />
+      {showMobile && (
+        <div className="lg:hidden w-full">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="outline" className="w-full sm:w-auto gap-2">
+                <SlidersHorizontal className="w-4 h-4" />
                 Фильтры
-              </SheetTitle>
-            </SheetHeader>
-            <div className="mt-6">
-              <FilterContent 
-                filters={filters} 
-                setFilters={setFilters} 
-                maxPrice={maxPrice} 
-                onReset={onReset} 
-              />
-            </div>
-          </SheetContent>
-        </Sheet>
-      </div>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-full sm:w-80 overflow-y-auto">
+              <SheetHeader className={undefined}>
+                <SheetTitle className="flex items-center gap-2">
+                  <SlidersHorizontal className="w-5 h-5" />
+                  Фильтры
+                </SheetTitle>
+              </SheetHeader>
+              <div className="mt-6">
+                <FilterContent 
+                  filters={filters} 
+                  setFilters={setFilters} 
+                  maxPrice={maxPrice} 
+                  onReset={onReset} 
+                />
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      )}
     </>
   );
 }

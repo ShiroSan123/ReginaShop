@@ -27,7 +27,7 @@ export default function ProductCard({ product, onAddToCart, onToggleFavorite, is
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100"
+      className="group bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100"
     >
       <Link to={createPageUrl('ProductDetail') + `?id=${product.id}`}>
         <div className="relative aspect-square overflow-hidden bg-slate-50">
@@ -74,7 +74,7 @@ export default function ProductCard({ product, onAddToCart, onToggleFavorite, is
         </div>
       </Link>
       
-      <div className="p-4">
+      <div className="p-3 sm:p-4">
         <div className="flex items-center gap-2 mb-2">
           <Badge variant="secondary" className="text-[10px] bg-slate-100 text-slate-600 font-medium">
             {categoryLabels[product.category]}
@@ -87,18 +87,18 @@ export default function ProductCard({ product, onAddToCart, onToggleFavorite, is
         </div>
         
         <Link to={createPageUrl('ProductDetail') + `?id=${product.id}`}>
-          <h3 className="font-medium text-slate-800 mb-2 line-clamp-2 min-h-[2.5rem] hover:text-emerald-600 transition-colors">
+          <h3 className="font-medium text-sm sm:text-base text-slate-800 mb-2 line-clamp-2 min-h-[2.25rem] sm:min-h-[2.5rem] hover:text-emerald-600 transition-colors">
             {product.title}
           </h3>
         </Link>
         
         <div className="flex items-end justify-between">
           <div>
-            <span className="text-lg font-bold text-slate-900">
+            <span className="text-base sm:text-lg font-bold text-slate-900">
               {product.price.toLocaleString()} ₽
             </span>
             {product.old_price && (
-              <span className="ml-2 text-sm text-slate-400 line-through">
+              <span className="ml-2 text-xs sm:text-sm text-slate-400 line-through">
                 {product.old_price.toLocaleString()} ₽
               </span>
             )}
@@ -107,7 +107,7 @@ export default function ProductCard({ product, onAddToCart, onToggleFavorite, is
           <button
             onClick={() => onAddToCart?.(product)}
             disabled={!product.in_stock}
-            className="p-2.5 rounded-xl bg-emerald-500 text-white hover:bg-emerald-600 disabled:bg-slate-200 disabled:text-slate-400 transition-all duration-300 hover:scale-105 active:scale-95"
+            className="p-2 sm:p-2.5 rounded-xl bg-emerald-500 text-white hover:bg-emerald-600 disabled:bg-slate-200 disabled:text-slate-400 transition-all duration-300 hover:scale-105 active:scale-95"
           >
             <ShoppingBag className="w-4 h-4" />
           </button>

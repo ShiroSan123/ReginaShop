@@ -155,7 +155,7 @@ export default function Admin() {
 
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <Card>
             <CardContent className="p-6">
               <div className="flex items-center gap-4">
@@ -215,14 +215,14 @@ export default function Admin() {
 
         {/* Main Content */}
         <Tabs defaultValue="products" className="space-y-6">
-          <TabsList className="bg-white p-1 rounded-xl shadow-sm">
-            <TabsTrigger value="products" className="rounded-lg data-[state=active]:bg-emerald-500 data-[state=active]:text-white">
+          <TabsList className="bg-white p-1 rounded-xl shadow-sm flex w-full flex-wrap gap-1 sm:inline-flex sm:w-auto">
+            <TabsTrigger value="products" className="flex-1 sm:flex-none rounded-lg data-[state=active]:bg-emerald-500 data-[state=active]:text-white">
               Товары
             </TabsTrigger>
-            <TabsTrigger value="orders" className="rounded-lg data-[state=active]:bg-emerald-500 data-[state=active]:text-white">
+            <TabsTrigger value="orders" className="flex-1 sm:flex-none rounded-lg data-[state=active]:bg-emerald-500 data-[state=active]:text-white">
               Заказы
             </TabsTrigger>
-            <TabsTrigger value="settings" className="rounded-lg data-[state=active]:bg-emerald-500 data-[state=active]:text-white">
+            <TabsTrigger value="settings" className="flex-1 sm:flex-none rounded-lg data-[state=active]:bg-emerald-500 data-[state=active]:text-white">
               Настройки
             </TabsTrigger>
           </TabsList>

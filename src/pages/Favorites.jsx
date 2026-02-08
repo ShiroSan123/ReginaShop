@@ -78,7 +78,7 @@ export default function Favorites() {
           В каталог
         </Link>
 
-        <div className="flex items-center gap-3 mb-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center mb-8">
           <Heart className="w-6 h-6 text-rose-500" />
           <h1 className="text-2xl md:text-3xl font-bold text-slate-800">Избранное</h1>
           <span className="text-slate-500">({favoriteProducts.length})</span>

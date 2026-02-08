@@ -146,7 +146,7 @@ export default function ProductManager({ products }) {
 
   return (
     <Card>
-      <CardHeader className="flex flex-row items-center justify-between">
+      <CardHeader className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <CardTitle>Товары ({products.length})</CardTitle>
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
           <DialogTrigger asChild>
@@ -176,7 +176,7 @@ export default function ProductManager({ products }) {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <Label>Цена *</Label>
                   <Input
@@ -197,7 +197,7 @@ export default function ProductManager({ products }) {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <Label>Категория</Label>
                   <Select value={form.category} onValueChange={(v) => setForm(f => ({ ...f, category: v }))}>
@@ -281,14 +281,14 @@ export default function ProductManager({ products }) {
               {/* Tags */}
               <div>
                 <Label>Теги</Label>
-                <div className="flex gap-2 mt-1">
+                <div className="flex flex-col sm:flex-row gap-2 mt-1">
                   <Input
                     value={tagInput}
                     onChange={(e) => setTagInput(e.target.value)}
                     onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addTag())}
                     placeholder="Добавить тег"
                   />
-                  <Button type="button" variant="outline" onClick={addTag}>
+                  <Button type="button" variant="outline" onClick={addTag} className="w-full sm:w-auto">
                     <Plus className="w-4 h-4" />
                   </Button>
                 </div>
@@ -305,7 +305,7 @@ export default function ProductManager({ products }) {
               </div>
 
               {/* Switches */}
-              <div className="flex items-center gap-8">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
                 <div className="flex items-center gap-3">
                   <Switch
                     // @ts-ignore
@@ -355,8 +355,8 @@ export default function ProductManager({ products }) {
           </div>
         </div>
 
-        <div className="rounded-lg border overflow-hidden">
-          <Table>
+        <div className="rounded-lg border overflow-x-auto">
+          <Table className="min-w-[720px]">
             <TableHeader>
               <TableRow className="bg-slate-50">
                 <TableHead className="w-16">Фото</TableHead>

@@ -56,7 +56,7 @@ export default function Checkout() {
         <motion.div 
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          className="bg-white rounded-2xl p-8 text-center max-w-md w-full shadow-lg"
+          className="bg-white rounded-2xl p-6 sm:p-8 text-center max-w-md w-full shadow-lg"
         >
           <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="w-10 h-10 text-emerald-500" />
@@ -193,7 +193,7 @@ export default function Checkout() {
 
           {/* Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-2xl p-6 shadow-sm sticky top-24">
+            <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm lg:sticky lg:top-24">
               <h2 className="text-lg font-semibold text-slate-800 mb-4">Ваш заказ</h2>
               
               <div className="space-y-3 max-h-64 overflow-y-auto">

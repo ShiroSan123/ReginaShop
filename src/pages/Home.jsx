@@ -109,7 +109,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1545241047-6083a3684587?w=1200&q=80')] bg-cover bg-center opacity-10" />
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/90 to-transparent" />
         
-        <div className="relative max-w-7xl mx-auto px-4 py-16 md:py-24 lg:py-32">
+        <div className="relative max-w-7xl mx-auto px-4 py-14 sm:py-16 md:py-24 lg:py-32">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -121,12 +121,12 @@ export default function Home() {
               <span className="text-sm font-medium">Новая коллекция</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Откройте мир <br />
               <span className="text-emerald-200">уникальных находок</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-emerald-100 mb-8 max-w-xl">
+            <p className="text-base sm:text-lg md:text-xl text-emerald-100 mb-8 max-w-xl">
               Растения, товары из Китая и эксклюзивные личные вещи — всё в одном месте
             </p>
             
@@ -144,7 +144,7 @@ export default function Home() {
 
       {/* Categories */}
       <section className="max-w-7xl mx-auto px-4 py-16">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-800">Категории</h2>
         </div>
         
@@ -157,7 +157,7 @@ export default function Home() {
               transition={{ delay: idx * 0.1 }}
             >
               <Link to={createPageUrl('Catalog') + `?category=${cat.id}`}>
-                <div className="relative group h-56 md:h-64 rounded-2xl overflow-hidden">
+                <div className="relative group h-48 sm:h-56 md:h-64 rounded-2xl overflow-hidden">
                   <img 
                     src={cat.image} 
                     alt={cat.title}
@@ -180,7 +180,7 @@ export default function Home() {
       {/* Featured Products */}
       {featuredProducts.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 py-16">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-8">
             <div className="flex items-center gap-3">
               <TrendingUp className="w-6 h-6 text-emerald-500" />
               <h2 className="text-2xl md:text-3xl font-bold text-slate-800">Рекомендуем</h2>
@@ -207,7 +207,7 @@ export default function Home() {
       {/* New Products */}
       {newProducts.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 py-16">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-8">
             <div className="flex items-center gap-3">
               <Sparkles className="w-6 h-6 text-violet-500" />
               <h2 className="text-2xl md:text-3xl font-bold text-slate-800">Новинки</h2>

@@ -182,31 +182,33 @@ export default function Catalog() {
           </p>
         </div>
 
-        <div className="flex gap-8">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
           {/* Sidebar */}
           <FilterSidebar 
             filters={filters}
             setFilters={setFilters}
             maxPrice={maxPrice}
             onReset={resetFilters}
+            showMobile={false}
           />
 
           {/* Products */}
           <div className="flex-1">
             {/* Toolbar */}
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-6 bg-white rounded-xl p-4 shadow-sm">
-              <div className="flex items-center gap-2 lg:hidden">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-6 bg-white rounded-xl p-4 shadow-sm">
+              <div className="flex w-full items-center gap-2 sm:w-auto">
                 <FilterSidebar 
                   filters={filters}
                   setFilters={setFilters}
                   maxPrice={maxPrice}
                   onReset={resetFilters}
+                  showDesktop={false}
                 />
               </div>
 
-              <div className="flex items-center gap-4 ml-auto">
+              <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:ml-auto">
                 <Select value={sortBy} onValueChange={setSortBy}>
-                  <SelectTrigger className="w-48 bg-slate-50 border-0">
+                  <SelectTrigger className="w-full sm:w-48 bg-slate-50 border-0">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>

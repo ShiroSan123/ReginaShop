@@ -204,11 +204,11 @@ export default function ProductDetail() {
               </h1>
 
               <div className="flex items-baseline gap-3">
-                <span className="text-3xl font-bold text-slate-900">
+                <span className="text-2xl sm:text-3xl font-bold text-slate-900">
                   {product.price?.toLocaleString()} ₽
                 </span>
                 {product.old_price && (
-                  <span className="text-xl text-slate-400 line-through">
+                  <span className="text-lg sm:text-xl text-slate-400 line-through">
                     {product.old_price.toLocaleString()} ₽
                   </span>
                 )}
@@ -267,7 +267,7 @@ export default function ProductDetail() {
             )}
 
             {/* Features */}
-            <div className="grid grid-cols-2 gap-4 pt-6 border-t">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t">
               <div className="flex items-center gap-3 p-4 bg-white rounded-xl">
                 <Truck className="w-5 h-5 text-emerald-500" />
                 <div>
@@ -310,7 +310,7 @@ export default function ProductDetail() {
         {/* Related Products */}
         {relatedProducts.length > 0 && (
           <section className="mt-16">
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-8">
               <h2 className="text-2xl font-bold text-slate-800">Похожие товары</h2>
               <Link 
                 to={createPageUrl('Catalog') + `?category=${product.category}`}
